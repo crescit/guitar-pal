@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eef4fb">
+<meta name="description" content="guitar-buddy — fretboard coach and tuner.">
+<title>guitar-buddy · Fretboard coach</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="guitar-buddy home">
+    <span class="brand-mark">🎸</span> guitar-buddy
+  </a>
+  <nav>
+    <a class="nav-link" href="index.html">Fretboard</a>
+    <a class="nav-link" href="song.html">Song</a>
+    <a class="nav-link" href="tuner.html">Tuner</a>
+    <button class="icon-btn" id="voiceBtn" title="Voice guide">🔊</button>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <section class="section-head">
+    <div class="eyebrow">Fretboard coach</div>
+    <h1>Every note, every fret.</h1>
+    <p>Standard tuning, 15 frets. Click a note for its name &amp; frequency, or spotlight a
+       chord, a scale, or a note we caught in the video analysis.</p>
+  </section>
+
+  <section class="glass panel" id="chordCoach">
+    <div class="eyebrow">Chord coach</div>
+    <div class="coach-head">
+      <h3 id="chordName">C</h3>
+      <span class="sub" id="chordNotes"></span>
+    </div>
+    <div class="chips" id="chordChips" role="group" aria-label="Choose a chord to learn"></div>
+
+    <div class="coach-grid">
+      <div class="diagram" id="chordDiagram"></div>
+      <div class="coach-steps">
+        <span id="stepLabel">Hit Next to start</span>
+        <ol class="steps" id="stepsList"></ol>
+        <div class="coach-nav">
+          <button class="btn btn-ghost" id="stepPrev">← Prev</button>
+          <button class="btn btn-primary" id="stepNext">Next step →</button>
+          <button class="btn btn-ghost" id="stepAll">Show chord</button>
+          <button class="btn btn-ghost" id="stepSpeak">🔊 Speak step</button>
+          <button class="btn btn-ghost" id="stepReset">Start over</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glass panel">
+    <div class="chips" role="group" aria-label="Highlight chords and scales">
+      <button class="chip" data-highlight="C">C</button>
+      <button class="chip" data-highlight="G">G</button>
+      <button class="chip" data-highlight="A minor">Am</button>
+      <button class="chip" data-highlight="E minor">Em</button>
+      <button class="chip" data-highlight="D">D</button>
+      <button class="chip" data-highlight="A">A</button>
+      <button class="chip" data-highlight="Major pentatonic">Pentatonic</button>
+      <button class="chip" data-highlight="Minor pentatonic">Minor pent</button>
+      <button class="chip" data-highlight="Major (Ionian)">Major scale</button>
+      <button class="chip" id="clearHl">Clear</button>
+      <button class="chip" id="notesTour">🔊 Learn the notes</button>
+    </div>
+    <div id="info">Click any note — or pick a chord/scale above.</div>
+    <div id="fretboard"></div>
+  </section>
+
+  <section class="glass panel">
+    <h2>Notes caught in the video analysis</h2>
+    <div id="clipFilter" class="chips"></div>
+    <ul id="noteList"></ul>
+    <p style="color:var(--muted);font-size:12.5px;margin:8px 0 0">
+      Click a detected note to highlight where it sits on the fretboard.</p>
+  </section>
+
+  <section class="glass panel" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+    <div style="flex:1;min-width:220px">
+      <div class="eyebrow">Ready to play?</div>
+      <h2 style="margin:10px 0 4px;font-size:17px;font-weight:800">Tune up first</h2>
+      <p style="color:var(--muted);font-size:13.5px;margin:0">
+        Use the mic tuner with reference tones for E A D G B E.</p>
+    </div>
+    <a class="btn btn-primary" href="tuner.html">🎸 Tune your guitar</a>
+  </section>
+</main>
+
+<footer>guitar-buddy · CV guitar coach</footer>
+
+<script src="notes.js"></script>
+<script src="chords.js"></script>
+<script src="notes_data.js"></script>
+<script src="ui.js"></script>
+<script src="voice.js"></script>
+<script src="fretboard.js"></script>
+<script src="chordcoach.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage_html/
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Project outputs
+data/*.png
+data/*.jpg
+data/*.mid
+data/audio/
+data/videos/
+.server.pid
+server.log
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# macOS
+.DS_Store

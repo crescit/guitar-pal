@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eef4fb">
+<meta name="description" content="guitar-buddy — tune your guitar by microphone.">
+<title>guitar-buddy · Tuner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="guitar-buddy home">
+    <span class="brand-mark">🎸</span> guitar-buddy
+  </a>
+  <nav>
+    <a class="nav-link" href="index.html">Fretboard</a>
+    <a class="nav-link" href="song.html">Song</a>
+    <a class="nav-link" href="tuner.html">Tuner</a>
+    <button class="icon-btn" id="voiceBtn" title="Voice guide">🔊</button>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <section class="section-head">
+    <div class="eyebrow">Guitar tuner</div>
+    <h1>Tune by ear, or by mic.</h1>
+    <p>Pick the string you're tuning, then pluck it. The meter shows how sharp or flat
+       it is — green means in tune (±5 cents).</p>
+  </section>
+
+  <section class="glass panel">
+    <div class="chips" aria-label="Tuner controls">
+      <button class="btn btn-primary" id="tunerOn">🎤 Start tuner</button>
+      <button class="btn btn-ghost" id="tunerOff">Stop</button>
+    </div>
+    <div style="margin:14px 0">
+      <label class="eyebrow" style="margin-bottom:8px">I'm tuning</label>
+      <select id="stringSelect"></select>
+    </div>
+
+    <div class="tuner-readout">
+      <span class="note" id="detectedNote">?</span>
+      <span class="freq" id="detectedFreq">—</span>
+      <span class="status-chip" id="tunerStatus">
+        <span class="dot"></span> ready
+      </span>
+    </div>
+
+    <div class="tuner-meter" aria-label="Tuning meter">
+      <div class="center"></div>
+      <div class="needle" id="needle"></div>
+    </div>
+
+    <div class="tuner-meta">
+      <span class="cents" id="centsLabel">no pitch yet</span>
+      <span class="target" id="targetLabel"></span>
+    </div>
+    <p style="color:var(--muted);font-size:12px;margin:10px 0 0">
+      Green = in tune (±5¢) · amber = close · red = far.</p>
+  </section>
+
+  <section class="glass panel">
+    <h2>Reference tones</h2>
+    <div class="chips">
+      <button class="chip" id="ref0">E · 6th</button>
+      <button class="chip" id="ref1">A · 5th</button>
+      <button class="chip" id="ref2">D · 4th</button>
+      <button class="chip" id="ref3">G · 3rd</button>
+      <button class="chip" id="ref4">B · 2nd</button>
+      <button class="chip" id="ref5">E · 1st</button>
+    </div>
+  </section>
+</main>
+
+<footer>guitar-buddy · CV guitar coach</footer>
+
+<script src="notes.js"></script>
+<script src="ui.js"></script>
+<script src="tuner.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eef4fb">
+<meta name="description" content="guitar-buddy — upload a MIDI and learn the chords you need, step by step.">
+<title>guitar-buddy · Song coach</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="guitar-buddy home">
+    <span class="brand-mark">🎸</span> guitar-buddy
+  </a>
+  <nav>
+    <a class="nav-link" href="index.html">Fretboard</a>
+    <a class="nav-link" href="song.html">Song</a>
+    <a class="nav-link" href="tuner.html">Tuner</a>
+    <button class="icon-btn" id="voiceBtn" title="Voice guide">🔊</button>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <section class="section-head">
+    <div class="eyebrow">Song coach</div>
+    <h1>Learn a song, chord by chord.</h1>
+    <p>Upload a MIDI file — guitar-buddy reads the notes, works out the chord progression
+       you'll need, and walks you through each chord with the step-by-step finger guide.</p>
+  </section>
+
+  <section class="glass panel">
+    <div class="chips" aria-label="Load a song">
+      <button class="btn btn-primary" id="loadSample">Load sample (C · Am · F · G)</button>
+      <label class="btn btn-ghost" for="songFile">
+        ⇪ Upload a .mid file
+        <input type="file" id="songFile" accept=".mid,.midi,audio/midi" hidden>
+      </label>
+    </div>
+    <div id="songTitle" class="song-title"></div>
+  </section>
+
+  <section class="glass panel">
+    <div class="coach-head">
+      <h3>Chords you'll need</h3>
+      <span class="sub" id="songMeta"></span>
+    </div>
+    <div class="chips" id="chordNeed"></div>
+    <div class="timeline-row" id="timeline"></div>
+    <div class="coach-nav" style="margin-top:14px">
+      <button class="btn btn-ghost" id="prevBtn">← Prev chord</button>
+      <button class="btn btn-primary" id="playBtn">▶ Play through</button>
+      <button class="btn btn-ghost" id="nextBtn">Next chord →</button>
+      <button class="btn btn-ghost" id="resetBtn">Reset</button>
+    </div>
+    <div id="currentChord" class="current-chord">…</div>
+  </section>
+
+  <section class="glass panel" id="fullGuidePanel">
+    <div class="eyebrow">Full song guide</div>
+    <div class="coach-head">
+      <h3 id="guideTitle">How to play — full guide</h3>
+      <span class="sub" id="guideMeta"></span>
+    </div>
+    <div class="chips" style="margin-bottom:12px" aria-label="Full-song controls">
+      <button class="btn btn-primary" id="guideFullSong">▶ Voice-guided full song</button>
+      <button class="btn btn-ghost" id="guideStop">⏹ Stop guide</button>
+    </div>
+    <ol id="guideList" class="guide-list"></ol>
+  </section>
+
+  <section class="glass panel" id="chordCoach">
+    <div class="eyebrow">Chord coach</div>
+    <div class="coach-head">
+      <h3 id="chordName">C</h3>
+      <span class="sub" id="chordNotes"></span>
+    </div>
+    <div class="chips" id="chordChips" role="group" aria-label="Choose a chord to learn"></div>
+    <div class="coach-grid">
+      <div class="diagram" id="chordDiagram"></div>
+      <div class="coach-steps">
+        <span id="stepLabel">Hit Next to start</span>
+        <ol class="steps" id="stepsList"></ol>
+        <div class="coach-nav">
+          <button class="btn btn-ghost" id="stepPrev">← Prev</button>
+          <button class="btn btn-primary" id="stepNext">Next step →</button>
+          <button class="btn btn-ghost" id="stepAll">Show chord</button>
+          <button class="btn btn-ghost" id="stepSpeak">🔊 Speak step</button>
+          <button class="btn btn-ghost" id="stepReset">Start over</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>guitar-buddy · CV guitar coach</footer>
+
+<script src="notes.js"></script>
+<script src="chords.js"></script>
+<script src="ui.js"></script>
+<script src="voice.js"></script>
+<script src="midi.js"></script>
+<script src="sample_midi.js"></script>
+<script src="chordcoach.js"></script>
+<script src="songcoach.js"></script>
+</body>
+</html>

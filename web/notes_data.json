@@ -1,0 +1,430 @@
+{
+ "clips": [
+  {
+   "id": "fast_guitar_solo",
+   "video": "FAST_GUITAR_SOLO.webm",
+   "notes": [
+    {
+     "start": 4.41,
+     "end": 4.5,
+     "midi": 78,
+     "name": "F#5",
+     "freq": 742.5,
+     "conf": 0.55,
+     "dur": 0.09
+    },
+    {
+     "start": 16.16,
+     "end": 16.25,
+     "midi": 58,
+     "name": "A#3",
+     "freq": 232.4,
+     "conf": 0.67,
+     "dur": 0.09
+    },
+    {
+     "start": 31.37,
+     "end": 31.46,
+     "midi": 55,
+     "name": "G3",
+     "freq": 192.8,
+     "conf": 0.71,
+     "dur": 0.09
+    },
+    {
+     "start": 40.1,
+     "end": 40.24,
+     "midi": 44,
+     "name": "G#2",
+     "freq": 103.4,
+     "conf": 0.71,
+     "dur": 0.14
+    },
+    {
+     "start": 44.3,
+     "end": 44.4,
+     "midi": 42,
+     "name": "F#2",
+     "freq": 93.1,
+     "conf": 0.77,
+     "dur": 0.09
+    },
+    {
+     "start": 51.87,
+     "end": 52.04,
+     "midi": 44,
+     "name": "G#2",
+     "freq": 104.0,
+     "conf": 0.86,
+     "dur": 0.16
+    },
+    {
+     "start": 52.2,
+     "end": 52.31,
+     "midi": 47,
+     "name": "B2",
+     "freq": 122.5,
+     "conf": 0.79,
+     "dur": 0.12
+    }
+   ]
+  },
+  {
+   "id": "guitar_picks",
+   "video": "Demonstration_of_26_Guitar_Picks.webm",
+   "notes": [
+    {
+     "start": 0.46,
+     "end": 1.02,
+     "midi": 62,
+     "name": "D4",
+     "freq": 298.3,
+     "conf": 0.99,
+     "dur": 0.56
+    },
+    {
+     "start": 1.04,
+     "end": 1.49,
+     "midi": 64,
+     "name": "E4",
+     "freq": 329.3,
+     "conf": 0.99,
+     "dur": 0.44
+    },
+    {
+     "start": 1.51,
+     "end": 1.65,
+     "midi": 65,
+     "name": "F4",
+     "freq": 349.9,
+     "conf": 0.99,
+     "dur": 0.14
+    },
+    {
+     "start": 1.76,
+     "end": 1.95,
+     "midi": 65,
+     "name": "F4",
+     "freq": 351.7,
+     "conf": 0.92,
+     "dur": 0.19
+    },
+    {
+     "start": 2.11,
+     "end": 2.3,
+     "midi": 50,
+     "name": "D3",
+     "freq": 148.2,
+     "conf": 0.57,
+     "dur": 0.19
+    },
+    {
+     "start": 3.23,
+     "end": 3.32,
+     "midi": 50,
+     "name": "D3",
+     "freq": 146.7,
+     "conf": 0.85,
+     "dur": 0.09
+    },
+    {
+     "start": 3.48,
+     "end": 3.81,
+     "midi": 67,
+     "name": "G4",
+     "freq": 394.2,
+     "conf": 0.99,
+     "dur": 0.33
+    },
+    {
+     "start": 4.9,
+     "end": 5.06,
+     "midi": 64,
+     "name": "E4",
+     "freq": 329.4,
+     "conf": 0.98,
+     "dur": 0.16
+    },
+    {
+     "start": 5.11,
+     "end": 5.34,
+     "midi": 62,
+     "name": "D4",
+     "freq": 298.7,
+     "conf": 0.97,
+     "dur": 0.23
+    },
+    {
+     "start": 5.41,
+     "end": 5.69,
+     "midi": 64,
+     "name": "E4",
+     "freq": 326.0,
+     "conf": 0.99,
+     "dur": 0.28
+    },
+    {
+     "start": 5.83,
+     "end": 5.92,
+     "midi": 64,
+     "name": "E4",
+     "freq": 331.2,
+     "conf": 0.98,
+     "dur": 0.09
+    },
+    {
+     "start": 5.94,
+     "end": 6.48,
+     "midi": 65,
+     "name": "F4",
+     "freq": 350.7,
+     "conf": 0.99,
+     "dur": 0.53
+    },
+    {
+     "start": 6.5,
+     "end": 7.57,
+     "midi": 41,
+     "name": "F2",
+     "freq": 87.8,
+     "conf": 0.9,
+     "dur": 1.07
+    },
+    {
+     "start": 9.66,
+     "end": 10.36,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.2,
+     "conf": 0.89,
+     "dur": 0.7
+    },
+    {
+     "start": 10.57,
+     "end": 11.24,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.5,
+     "conf": 0.89,
+     "dur": 0.67
+    },
+    {
+     "start": 11.33,
+     "end": 11.94,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.4,
+     "conf": 0.89,
+     "dur": 0.6
+    },
+    {
+     "start": 12.19,
+     "end": 12.77,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.6,
+     "conf": 0.89,
+     "dur": 0.58
+    },
+    {
+     "start": 13.03,
+     "end": 13.58,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.4,
+     "conf": 0.89,
+     "dur": 0.56
+    },
+    {
+     "start": 13.82,
+     "end": 14.35,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.7,
+     "conf": 0.89,
+     "dur": 0.53
+    },
+    {
+     "start": 14.61,
+     "end": 15.21,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.9,
+     "conf": 0.89,
+     "dur": 0.6
+    },
+    {
+     "start": 15.44,
+     "end": 16.02,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.4,
+     "conf": 0.89,
+     "dur": 0.58
+    },
+    {
+     "start": 16.28,
+     "end": 16.88,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.6,
+     "conf": 0.89,
+     "dur": 0.6
+    },
+    {
+     "start": 17.07,
+     "end": 17.58,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.3,
+     "conf": 0.89,
+     "dur": 0.51
+    },
+    {
+     "start": 17.9,
+     "end": 18.46,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.2,
+     "conf": 0.89,
+     "dur": 0.56
+    },
+    {
+     "start": 18.69,
+     "end": 19.34,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.5,
+     "conf": 0.89,
+     "dur": 0.65
+    },
+    {
+     "start": 19.44,
+     "end": 20.18,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.6,
+     "conf": 0.89,
+     "dur": 0.74
+    },
+    {
+     "start": 20.32,
+     "end": 20.99,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.5,
+     "conf": 0.89,
+     "dur": 0.67
+    },
+    {
+     "start": 21.13,
+     "end": 21.78,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.4,
+     "conf": 0.89,
+     "dur": 0.65
+    },
+    {
+     "start": 21.94,
+     "end": 22.55,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.5,
+     "conf": 0.89,
+     "dur": 0.6
+    },
+    {
+     "start": 22.76,
+     "end": 23.43,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.6,
+     "conf": 0.89,
+     "dur": 0.67
+    },
+    {
+     "start": 23.55,
+     "end": 24.22,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.5,
+     "conf": 0.89,
+     "dur": 0.67
+    },
+    {
+     "start": 24.38,
+     "end": 25.1,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.9,
+     "conf": 0.89,
+     "dur": 0.72
+    },
+    {
+     "start": 25.29,
+     "end": 25.89,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.4,
+     "conf": 0.89,
+     "dur": 0.6
+    },
+    {
+     "start": 26.05,
+     "end": 26.63,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.5,
+     "conf": 0.89,
+     "dur": 0.58
+    },
+    {
+     "start": 26.87,
+     "end": 27.56,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.5,
+     "conf": 0.89,
+     "dur": 0.7
+    },
+    {
+     "start": 27.75,
+     "end": 28.33,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.7,
+     "conf": 0.89,
+     "dur": 0.58
+    },
+    {
+     "start": 28.56,
+     "end": 29.09,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.6,
+     "conf": 0.89,
+     "dur": 0.53
+    },
+    {
+     "start": 29.35,
+     "end": 29.98,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.3,
+     "conf": 0.89,
+     "dur": 0.63
+    },
+    {
+     "start": 30.21,
+     "end": 30.81,
+     "midi": 40,
+     "name": "E2",
+     "freq": 82.4,
+     "conf": 0.89,
+     "dur": 0.6
+    }
+   ]
+  }
+ ]
+}
