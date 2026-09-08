@@ -33,8 +33,9 @@ To use another port, override `PORT`, for example `make PORT=8080`. On Linux or 
 | `index.html` | Chord lessons, chord/scale highlighting, and an interactive fretboard |
 | `song.html` | Browser-side MIDI parsing, chord timeline, playback, and guided fingering |
 | `tuner.html` | Six-string tuner with live pitch detection and reference tones |
+| `live.html` | Live detection demo — webcam or uploaded video, with guitar/neck/fingertip overlays |
 
-The bundled `cream.mid` is a short, programmatically generated C–Am–F–G progression—not a recording or transcription of the band Cream. Regenerate it with `python scripts/gen_sample.py`.
+The Live page (`/live.html`) uses the Python backend to run detection in the browser. `make up` starts that backend and opens the Live demo; the voice guide uses native macOS speech synthesis (`say`) for real Apple voices instead of the robotic Web Speech fallback. The bundled `cream.mid` is a short, programmatically generated C–Am–F–G progression—not a recording or transcription of the band Cream. Regenerate it with `python scripts/gen_sample.py`.
 
 ## Run the Python tools
 

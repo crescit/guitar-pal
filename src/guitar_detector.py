@@ -59,6 +59,7 @@ class GuitarDetector:
         self.nut_side = None        # 'left'/'right' (which end is the nut)
         self.string_y = None        # y positions of strings in neck coords
         self.fingertips = []        # list of dicts {x,y,conf,fret,string}
+        self.mapper = None
 
     # -- stage 1: guitar ------------------------------------------------------
     def detect_guitar(self, frame, padding=20, out_w=640, out_h=480):
@@ -167,6 +168,9 @@ class GuitarDetector:
     # -- stage 5: full pipeline on one frame ----------------------------------
     def process(self, frame):
         """Run guitar -> neck -> fret/string -> fingers. Returns self (mutated)."""
+        # Results describe this frame only. Without clearing them first, one
+        # positive detection remains visible through every later miss.
+        self.reset_state()
         gframe = self.detect_guitar(frame)
         if gframe is None:
             return self

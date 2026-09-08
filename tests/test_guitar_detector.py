@@ -139,6 +139,23 @@ def test_process_no_guitar(det):
     assert det.guitar_box is None
 
 
+def test_process_clears_previous_frame_on_miss(det):
+    det.guitar_box = (1, 2, 100, 200, 0.9)
+    det.neck_box = np.ones((4, 2), np.float32)
+    det.neck_frame = np.ones((20, 20, 3), np.uint8)
+    det.fingertips = [{"x": 1, "y": 2, "conf": 0.9}]
+    det.mapper = object()
+    det.guitar._set(boxes=None)
+
+    det.process(_frame())
+
+    assert det.guitar_box is None
+    assert det.neck_box is None
+    assert det.neck_frame is None
+    assert det.fingertips == []
+    assert det.mapper is None
+
+
 def test_process_no_neck(det):
     det.guitar._set(boxes=FakeBoxes([0, 0, 500, 300], 0.9))
     det.neck._set(keypoints=FakeKeypoints())  # no neck -> early return

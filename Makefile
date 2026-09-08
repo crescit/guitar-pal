@@ -10,6 +10,8 @@ VENV       := .venv
 PYTHON     := $(VENV)/bin/python
 PIP        := $(VENV)/bin/pip
 PORT       := 8000
+HOST       := 127.0.0.1
+HANDS      := 0
 SERVER_LOG := server.log
 SERVER_PID := .server.pid
 
@@ -19,14 +21,27 @@ SERVER_PID := .server.pid
 
 up: venv
 	@if [ -f $(SERVER_PID) ] && kill -0 $$(cat $(SERVER_PID)) 2>/dev/null; then \
-		echo "Web server already running (pid $$(cat $(SERVER_PID)))"; \
+		echo "Backend already running (pid $$(cat $(SERVER_PID)))"; \
 	else \
-		nohup python3 -m http.server $(PORT) --directory web > $(SERVER_LOG) 2>&1 & \
+		GB_HANDS=$(HANDS) nohup $(PYTHON) -m uvicorn server:app --host $(HOST) --port $(PORT) > $(SERVER_LOG) 2>&1 & \
 		echo $$! > $(SERVER_PID); \
-		echo "Web server started on http://localhost:$(PORT) (pid $$!)"; \
+		echo "Backend starting on http://$(HOST):$(PORT) (pid $$!)"; \
 	fi
-	@open http://localhost:$(PORT)
-	@echo "App opened in your browser. Log: $(SERVER_LOG)"
+	@attempt=0; \
+	until curl --silent --fail http://$(HOST):$(PORT)/api/health >/dev/null; do \
+		attempt=$$((attempt + 1)); \
+		if [ $$attempt -ge 60 ]; then \
+			echo "Backend did not become ready. See $(SERVER_LOG)."; \
+			exit 1; \
+		fi; \
+		if [ ! -f $(SERVER_PID) ] || ! kill -0 $$(cat $(SERVER_PID)) 2>/dev/null; then \
+			echo "Backend exited during startup. See $(SERVER_LOG)."; \
+			exit 1; \
+		fi; \
+		sleep 1; \
+	done
+	@open http://$(HOST):$(PORT)/live.html
+	@echo "Live demo opened in your browser. Log: $(SERVER_LOG)"
 	@echo "Stop it later with: make stop"
 
 venv:
@@ -45,7 +60,7 @@ install: venv
 # --- browser app --------------------------------------------------------------
 
 web:
-	python3 -m http.server $(PORT) --directory web
+	GB_HANDS=$(HANDS) $(PYTHON) -m uvicorn server:app --host $(HOST) --port $(PORT)
 
 stop:
 	@if [ -f $(SERVER_PID) ]; then \
@@ -82,9 +97,9 @@ clean:
 
 help:
 	@echo "guitar-buddy targets:"
-	@echo "  make (up)    one-shot: venv + deps + serve web + open browser"
-	@echo "  make stop    stop the background web server"
-	@echo "  make web     run the web server in the foreground (port $(PORT))"
+	@echo "  make (up)    one-shot: venv + deps + start backend + open Live demo"
+	@echo "  make stop    stop the background backend server"
+	@echo "  make web     run the backend in the foreground (port $(PORT))"
 	@echo "  make run     launch the live webcam hand-tracking loop"
 	@echo "  make demo    detector on an image (set IMG=path)"
 	@echo "  make bench   benchmark a video (set VID=path)"

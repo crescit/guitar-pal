@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eef4fb">
+<meta name="description" content="guitar-buddy — live detection demo.">
+<title>guitar-buddy · Live detection</title>
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="guitar-buddy home">
+    <span class="brand-mark">🎸</span> guitar-buddy
+  </a>
+  <nav>
+    <a class="nav-link" href="index.html">Fretboard</a>
+    <a class="nav-link" href="song.html">Song</a>
+    <a class="nav-link" href="tuner.html">Tuner</a>
+    <a class="nav-link" href="live.html">Live</a>
+    <button class="icon-btn" id="voiceBtn" title="Voice guide">🔊</button>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <section class="section-head">
+    <div class="eyebrow">Live detection</div>
+    <h1>Watch it work.</h1>
+    <p>Point a guitar at the webcam, or upload a video. The detector finds the guitar,
+       rectifies the neck, and maps fingertips to strings &amp; frets — live in the browser.</p>
+  </section>
+
+  <div class="chips" id="modeChips" role="group" aria-label="Source">
+    <button class="chip" data-mode="webcam">📷 Live webcam</button>
+    <button class="chip" data-mode="video">🎞 Upload video</button>
+  </div>
+
+  <section class="glass panel" id="webcamPanel">
+    <div class="eyebrow">Live webcam</div>
+    <div class="coach-head">
+      <h3>Camera demo</h3>
+      <span class="sub" id="wcStatus">Click Start to begin.</span>
+    </div>
+    <div class="live-stage">
+      <div class="stage-main">
+        <div id="wcPlaceholder" class="placeholder">Start the camera to see detection here.</div>
+        <img id="wcFrame" alt="Detected frame" hidden>
+      </div>
+      <div class="stage-side">
+        <div class="eyebrow">Rectified neck</div>
+        <img id="wcNeck" alt="Rectified neck crop" hidden>
+        <div id="wcNeckEmpty" class="placeholder small">No neck detected yet.</div>
+      </div>
+    </div>
+    <div class="coach-nav">
+      <button class="btn btn-primary" id="wcStart">▶ Start camera</button>
+      <button class="btn btn-ghost" id="wcStop">■ Stop</button>
+      <span class="sub" id="wcFps"></span>
+    </div>
+    <div class="live-notes">
+      <div class="eyebrow">Detected notes</div>
+      <ul id="wcNotes"></ul>
+    </div>
+  </section>
+
+  <section class="glass panel" id="videoPanel" hidden>
+    <div class="eyebrow">Video upload</div>
+    <div class="coach-head">
+      <h3>Analyze a video</h3>
+      <span class="sub" id="vdStatus">Upload a clip to see detection run over it.</span>
+    </div>
+    <div class="coach-nav">
+      <input type="file" id="vdFile" accept="video/*" class="sub">
+      <button class="btn btn-primary" id="vdGo">🎞 Analyze</button>
+    </div>
+    <video id="vdPlayer" controls hidden></video>
+    <div class="live-notes">
+      <div class="eyebrow">Note timeline</div>
+      <ul id="vdNotes"></ul>
+    </div>
+  </section>
+
+  <section class="glass panel">
+    <div class="eyebrow">Backend</div>
+    <p class="sub" id="backendStatus">Checking backend…</p>
+    <p class="sub" id="backendHint">If the backend is offline, run <code>make up</code> from the project root.</p>
+  </section>
+</main>
+
+<footer>guitar-buddy · CV guitar coach</footer>
+
+<script src="notes.js"></script>
+<script src="ui.js"></script>
+<script src="voice.js"></script>
+<script src="live.js?v=3"></script>
+</body>
+</html>

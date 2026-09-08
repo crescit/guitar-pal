@@ -263,3 +263,16 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:26px 0 10px}
   width:22px;height:22px;border-radius:50%;background:var(--accent-glass);color:var(--accent-ink);
   font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
 .guide-list li b{color:var(--ink)}
+
+/* ---------- live detection ---------- */
+.live-stage{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;margin-top:12px}
+.stage-main{flex:1;min-width:260px}
+.stage-main img,.stage-main video{width:100%;border-radius:12px;border:1px solid var(--card-line);background:#000}
+.stage-side{width:180px;min-width:180px}
+.stage-side img{width:100%;border-radius:12px;border:1px solid var(--card-line);background:#000}
+.placeholder{border:2px dashed var(--card-line);border-radius:12px;padding:36px 14px;text-align:center;color:var(--muted);font-size:13px;min-height:180px;display:flex;align-items:center;justify-content:center}
+.placeholder.small{min-height:70px;padding:14px;font-size:12px}
+.live-notes{margin-top:14px}
+.live-notes ul{list-style:none;padding:0;margin:8px 0 0}
+.live-notes li{background:var(--panel);border:1px solid var(--card-line);border-radius:10px;padding:6px 10px;margin:0 0 6px;font-size:13px;color:var(--text-2)}
+#vdPlayer{width:100%;border-radius:12px;border:1px solid var(--card-line);background:#000;margin-top:12px}

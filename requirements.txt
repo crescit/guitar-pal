@@ -4,3 +4,6 @@ mediapipe>=1.0.1
 ultralytics>=8.3
 scipy
 mido
+fastapi
+uvicorn
+python-multipart
